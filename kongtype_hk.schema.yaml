@@ -30,6 +30,7 @@ engine:
   translators:
     - punct_translator
     - script_translator
+    - lua_translator@kongtype_jianpin_translator
     - lua_translator@kongtype_cloud_translator
   filters:
     - simplifier

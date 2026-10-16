@@ -8,6 +8,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cp -f "$DIR"/kongtype_hk.schema.yaml "$TARGET_DIR/"
 cp -f "$DIR"/kongtype_hk.dict.yaml "$TARGET_DIR/"
+[ -f "$DIR/kongtype_hk_ext.dict.yaml" ] && cp -f "$DIR/kongtype_hk_ext.dict.yaml" "$TARGET_DIR/"
 cp -f "$DIR"/default.custom.yaml "$TARGET_DIR/"
 cp -f "$DIR"/squirrel.custom.yaml "$TARGET_DIR/"
 [ -f "$DIR/luna_pinyin.dict.yaml" ] && cp -f "$DIR/luna_pinyin.dict.yaml" "$TARGET_DIR/"

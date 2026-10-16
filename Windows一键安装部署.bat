@@ -11,6 +11,7 @@ if not exist "%TARGET_DIR%" mkdir "%TARGET_DIR%"
 
 copy /y "%~dp0kongtype_hk.schema.yaml" "%TARGET_DIR%\" >nul
 copy /y "%~dp0kongtype_hk.dict.yaml" "%TARGET_DIR%\" >nul
+if exist "%~dp0kongtype_hk_ext.dict.yaml" copy /y "%~dp0kongtype_hk_ext.dict.yaml" "%TARGET_DIR%\" >nul
 copy /y "%~dp0default.custom.yaml" "%TARGET_DIR%\" >nul
 copy /y "%~dp0weasel.custom.yaml" "%TARGET_DIR%\" >nul
 if exist "%~dp0luna_pinyin.dict.yaml" copy /y "%~dp0luna_pinyin.dict.yaml" "%TARGET_DIR%\" >nul
@@ -20,7 +21,11 @@ if exist "%~dp0rime.lua" copy /y "%~dp0rime.lua" "%TARGET_DIR%\" >nul
 echo [√] 方案核心文件与通用汉字拼音词库已成功复制到: %TARGET_DIR%
 echo.
 echo 正在尝试自动唤起小狼毫重新部署...
-if exist "%ProgramFiles(x86)%\Rime\weasel-0.16.3\WeaselDeployer.exe" (
+if exist "%ProgramFiles%\Rime\weasel-0.17.4\WeaselDeployer.exe" (
+    start "" "%ProgramFiles%\Rime\weasel-0.17.4\WeaselDeployer.exe" /deploy
+) else if exist "%ProgramFiles(x86)%\Rime\weasel-0.17.4\WeaselDeployer.exe" (
+    start "" "%ProgramFiles(x86)%\Rime\weasel-0.17.4\WeaselDeployer.exe" /deploy
+) else if exist "%ProgramFiles(x86)%\Rime\weasel-0.16.3\WeaselDeployer.exe" (
     start "" "%ProgramFiles(x86)%\Rime\weasel-0.16.3\WeaselDeployer.exe" /deploy
 ) else if exist "%ProgramFiles%\Rime\weasel-0.16.3\WeaselDeployer.exe" (
     start "" "%ProgramFiles%\Rime\weasel-0.16.3\WeaselDeployer.exe" /deploy
