@@ -1,0 +1,79 @@
+# Rime schema: kongtype_hk
+# encoding: utf-8
+
+schema:
+  schema_id: kongtype_hk
+  name: "港话通 · 普转港话 (KongType)"
+  version: "1.6.0"
+  author:
+    - "KongType RIME Team <support@kongtype.app>"
+  description: |
+    输入普通话拼音，自动输出100%纯正原汁原味香港粤语。
+    全面支持日常长词短语与权威粤语教程语料，严格修正打包/逛街等高频词义映射。
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+    - lua_translator@kongtype_cloud_translator
+  filters:
+    - simplifier
+    - reverse_lookup_filter
+    - lua_filter@kongtype_jyutping_filter
+    - uniquifier
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  auto_select: false
+  use_space: false
+  algebra:
+    - erase/^xx$/
+    - derive/^([zcs])h/$1/
+    - derive/^([zcs])([^h])/$1h$2/
+    - derive/^([nl])ue$/$1ve/
+    - derive/^([jqxy])u$/$1v/
+    - derive/un$/uen/
+    - derive/ui$/uei/
+    - derive/iu$/iou/
+
+translator:
+  dictionary: kongtype_hk
+  prism: kongtype_hk
+  initial_quality: 100
+  enable_user_dict: false
+  enable_sentence: true
+  sentence_over_completion: false
+  spelling_hints: 5
+  comment_format:
+    - xform/^/〔/
+    - xform/$/〕/
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+  bindings:
+    - { when: has_menu, accept: "period", send: "Page_Down" }
+    - { when: has_menu, accept: "comma", send: "Page_Up" }
+    - { when: has_menu, accept: "minus", send: "Page_Up" }
+    - { when: has_menu, accept: "equal", send: "Page_Down" }
+
+recognizer:
+  import_preset: default

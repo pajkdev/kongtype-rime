@@ -1,0 +1,36 @@
+# squirrel.custom.yaml (macOS 鼠须管专属外观配置)
+# 采用搜狗经典白 / 高对比度清爽现代皮肤
+
+patch:
+  style:
+    color_scheme: sogou_white
+    horizontal: true
+    inline_preedit: false
+    corner_radius: 8
+    border_height: 1
+    border_width: 1
+    line_spacing: 6
+    font_face: "PingFang SC, SF Pro Text"
+    font_point: 15
+  preset_color_schemes:
+    sogou_white:
+      name: "搜狗经典白 / Sogou Clean White"
+      author: "KongType Team"
+      back_color: 0xffffff
+      border_color: 0xe2e8f0
+      text_color: 0x1e293b
+      hilited_text_color: 0xffffff
+      hilited_back_color: 0x2563eb
+      candidate_text_color: 0x0f172a
+      comment_text_color: 0x64748b
+    kongtype_neon:
+      name: "港话通深色 / KongType Dark"
+      author: "KongType Team"
+      color_space: display_p3
+      back_color: 0x1e1914
+      border_color: 0x403020
+      text_color: 0xe0e0e0
+      hilited_text_color: 0x101010
+      hilited_back_color: 0x22b2f5
+      candidate_text_color: 0xd0d0d0
+      comment_text_color: 0x888888

@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <defs>
+    <!-- Soft Floor Ambient Blur -->
+    <filter id="floorShadowBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" />
+    </filter>
+
+    <!-- Keycap 3D Drop Shadow -->
+    <filter id="keycap3DShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#020617" flood-opacity="0.45" />
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.3" />
+    </filter>
+
+    <!-- Letter K Chunky 3D Shadow -->
+    <filter id="kLetter3D" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.35" />
+    </filter>
+
+    <!-- Mechanical Switch Red (Cherry MX Style) -->
+    <linearGradient id="switchRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF4D4D" />
+      <stop offset="100%" stop-color="#CC1111" />
+    </linearGradient>
+
+    <!-- RGB Underglow Glow -->
+    <radialGradient id="rgbGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.7" />
+      <stop offset="70%" stop-color="#6366F1" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#1E1B4B" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Keycap Body: Front Skirt Gradient (Shaded 3D facet) -->
+    <linearGradient id="frontSkirtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1D4ED8" />
+      <stop offset="60%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#172554" />
+    </linearGradient>
+
+    <!-- Keycap Body: Left & Right Side Skirt Gradients -->
+    <linearGradient id="sideSkirtGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+
+    <!-- Keycap Top Dish Surface (Illuminated concave face) -->
+    <linearGradient id="topDishGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="40%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+
+    <!-- Top Dish Concave Ergonomic Scoop (Dished keycap shadow) -->
+    <radialGradient id="dishScoop" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#1D4ED8" stop-opacity="0.28" />
+      <stop offset="70%" stop-color="#1D4ED8" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.2" />
+    </radialGradient>
+
+    <!-- Chunky Cartoon K Marshmallow Fill -->
+    <linearGradient id="kMarshmallow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Tactile Click Sparkle Gradient (Golden Energy) -->
+    <linearGradient id="clickSparkleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF066" />
+      <stop offset="100%" stop-color="#FF9900" />
+    </linearGradient>
+
+    <!-- Mechanical Spring Silver -->
+    <linearGradient id="springGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94A3B8" />
+      <stop offset="50%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#64748B" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Ambient Floor Plane & RGB Underglow -->
+  <ellipse cx="256" cy="462" rx="195" ry="32" fill="#090D1A" opacity="0.45" filter="url(#floorShadowBlur)" />
+  <ellipse cx="256" cy="442" rx="150" ry="24" fill="url(#rgbGlow)" />
+
+  <!-- 2. Mechanical Keyboard Switch Peeking Beneath Keycap (Cherry MX Cross Stem & Base) -->
+  <g id="mechanical-switch">
+    <!-- Switch Housing Base (Translucent Red/Black Gaming Switch) -->
+    <rect x="206" y="408" width="100" height="34" rx="8" fill="url(#switchRed)" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.5))" />
+    <!-- Center MX Cross Mount Pillar (十字轴芯) -->
+    <rect x="238" y="396" width="36" height="24" rx="4" fill="#FF7070" />
+    <rect x="250" y="392" width="12" height="32" rx="3" fill="#FFE5E5" />
+    <rect x="234" y="402" width="44" height="12" rx="3" fill="#FFE5E5" />
+    <!-- Mechanical Spring Coil Peek (弹簧) -->
+    <path d="M 175 428 Q 185 418 195 428 Q 205 438 215 428" stroke="url(#springGrad)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.75" />
+    <path d="M 297 428 Q 307 418 317 428 Q 327 438 337 428" stroke="url(#springGrad)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.75" />
+  </g>
+
+  <!-- 3. The 3D Cartoon Keycap Body (Trapezoidal OEM Profile) -->
+  <g filter="url(#keycap3DShadow)">
+    <!-- Base Outer Skirt (Full 3D Silhouette) -->
+    <!-- Front Skirt: Facing the viewer, steep bevel -->
+    <path
+      d="M 88 280 
+         L 424 280 
+         Q 456 280 464 310 
+         L 476 394 
+         Q 480 422 452 424 
+         L 60 424 
+         Q 32 422 36 394 
+         L 48 310 
+         Q 56 280 88 280 Z"
+      fill="url(#frontSkirtGrad)"
+    />
+
+    <!-- Front Skirt Bottom Bevel Lip (Tactile bottom rim) -->
+    <path
+      d="M 52 414 L 460 414 Q 470 414 466 422 L 452 424 L 60 424 Q 44 424 46 418 Z"
+      fill="#0F172A"
+      opacity="0.5"
+    />
+
+    <!-- Front Skirt Mechanical Keycap Details (Cute Molded Micro-Label) -->
+    <rect x="220" y="348" width="72" height="10" rx="5" fill="#38BDF8" opacity="0.5" />
+    <circle cx="210" cy="353" r="3" fill="#60A5FA" opacity="0.7" />
+    <circle cx="302" cy="353" r="3" fill="#60A5FA" opacity="0.7" />
+
+    <!-- Left Sloping Skirt -->
+    <path
+      d="M 124 96 
+         Q 92 98 84 126 
+         L 48 310 
+         Q 56 280 88 280 
+         L 126 276 
+         Q 140 274 136 250 
+         L 132 120 
+         Q 130 96 124 96 Z"
+      fill="url(#sideSkirtGrad)"
+      opacity="0.85"
+    />
+
+    <!-- Right Sloping Skirt -->
+    <path
+      d="M 388 96 
+         Q 420 98 428 126 
+         L 464 310 
+         Q 456 280 424 280 
+         L 386 276 
+         Q 372 274 376 250 
+         L 380 120 
+         Q 382 96 388 96 Z"
+      fill="url(#sideSkirtGrad)"
+      opacity="0.65"
+    />
+
+    <!-- 4. Top Dish Surface (Recessed Ergonomic Finger Scoop) -->
+    <!-- Top Face Outer Rim with rounded cushion curves -->
+    <path
+      d="M 136 94 
+         L 376 94 
+         Q 416 94 416 132 
+         L 410 248 
+         Q 408 284 370 284 
+         L 142 284 
+         Q 104 284 102 248 
+         L 96 132 
+         Q 96 94 136 94 Z"
+      fill="url(#topDishGrad)"
+    />
+
+    <!-- Concave Scoop Inner Shadow (Dished keycap face) -->
+    <path
+      d="M 136 94 
+         L 376 94 
+         Q 416 94 416 132 
+         L 410 248 
+         Q 408 284 370 284 
+         L 142 284 
+         Q 104 284 102 248 
+         L 96 132 
+         Q 96 94 136 94 Z"
+      fill="url(#dishScoop)"
+    />
+
+    <!-- Shiny Cartoon Gel/Gloss Highlights (Bubble Sheen) -->
+    <!-- Main top-left pill highlight -->
+    <path
+      d="M 140 106 
+         L 280 106 
+         Q 296 106 288 116 
+         L 148 116 
+         Q 132 116 140 106 Z"
+      fill="#FFFFFF"
+      opacity="0.55"
+    />
+    <!-- Corner dot highlight -->
+    <circle cx="126" cy="122" r="7" fill="#FFFFFF" opacity="0.65" />
+    <circle cx="118" cy="138" r="3.5" fill="#FFFFFF" opacity="0.45" />
+
+    <!-- 5. The Chunky Cartoon "K" (Marshmallow Embossed on Keycap Dish) -->
+    <g filter="url(#kLetter3D)">
+      <!-- 3D Extrusion Shadow Layer for K -->
+      <g transform="translate(0, 5)" opacity="0.35">
+        <!-- Vertical Bar Shadow -->
+        <rect x="168" y="128" width="46" height="126" rx="23" fill="#0F172A" />
+        <!-- Upper Arm Shadow -->
+        <path d="M 198 198 L 306 134 Q 324 124 332 142 L 334 146 Q 340 164 322 176 L 244 218 Z" fill="#0F172A" />
+        <!-- Lower Arm Shadow -->
+        <path d="M 230 196 L 312 254 Q 328 266 312 280 L 308 282 Q 292 292 278 276 L 200 216 Z" fill="#0F172A" />
+      </g>
+
+      <!-- Main Creamy K: Vertical Stem (Pillowy, friendly cartoon proportions) -->
+      <rect
+        x="168"
+        y="126"
+        width="46"
+        height="126"
+        rx="23"
+        fill="url(#kMarshmallow)"
+      />
+
+      <!-- Lower Diagonal Arm (Chunky bouncy foot) -->
+      <path
+        d="M 230 194 
+           L 312 252 
+           Q 328 264 314 278 
+           L 308 282 
+           Q 292 292 278 276 
+           L 200 214 Z"
+        fill="url(#kMarshmallow)"
+      />
+
+      <!-- Upper Diagonal Arm (Upbeat keystroke wing) -->
+      <path
+        d="M 198 196 
+           L 306 132 
+           Q 324 122 334 138 
+           L 336 142 
+           Q 344 158 326 172 
+           L 246 216 Z"
+        fill="url(#kMarshmallow)"
+      />
+
+      <!-- Overlapping Ribbon Fold for Extra 3D Pop -->
+      <ellipse cx="224" cy="204" rx="14" ry="14" fill="#E2E8F0" opacity="0.75" />
+
+      <!-- Cute Little Specular Gleam on the "K" Stem -->
+      <rect x="176" y="136" width="10" height="42" rx="5" fill="#FFFFFF" opacity="0.8" />
+    </g>
+  </g>
+
+  <!-- 6. Creative Cartoon Tactile Effects (The "CLACK!" Clicky Energy) -->
+  <!-- Crisp mechanical tactile sparkle (✦) popping off top-right -->
+  <g transform="translate(416, 76)">
+    <!-- 4-point cartoon star -->
+    <path
+      d="M 0 -36 
+         Q 4 -8 36 0 
+         Q 4 8 0 36 
+         Q -4 8 -36 0 
+         Q -4 -8 0 -36 Z"
+      fill="url(#clickSparkleGrad)"
+      filter="drop-shadow(0 4px 8px rgba(255,165,0,0.6))"
+    />
+    <circle cx="0" cy="0" r="7" fill="#FFFFFF" />
+  </g>
+
+  <!-- Secondary mini sparkle -->
+  <g transform="translate(456, 126) scale(0.45)">
+    <path
+      d="M 0 -28 Q 3 -6 28 0 Q 3 6 0 28 Q -3 6 -28 0 Q -3 -6 0 -28 Z"
+      fill="#67E8F9"
+      filter="drop-shadow(0 2px 6px rgba(6,182,212,0.6))"
+    />
+  </g>
+
+  <!-- Soundwave / Tactile Click Vibration Ring (CLACK vibration) -->
+  <path
+    d="M 80 84 Q 60 114 62 152"
+    stroke="#38BDF8"
+    stroke-width="5"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0.8"
+  />
+  <path
+    d="M 64 68 Q 36 108 40 162"
+    stroke="#60A5FA"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0.45"
+  />
+</svg>

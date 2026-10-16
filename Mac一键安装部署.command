@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "========================================================"
+echo "  港话通 RIME 香港粤语输入法 macOS 一键自动部署程序 (v1.6.0)"
+echo "========================================================"
+TARGET_DIR="$HOME/Library/Rime"
+mkdir -p "$TARGET_DIR"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cp -f "$DIR"/kongtype_hk.schema.yaml "$TARGET_DIR/"
+cp -f "$DIR"/kongtype_hk.dict.yaml "$TARGET_DIR/"
+cp -f "$DIR"/default.custom.yaml "$TARGET_DIR/"
+cp -f "$DIR"/squirrel.custom.yaml "$TARGET_DIR/"
+[ -f "$DIR/luna_pinyin.dict.yaml" ] && cp -f "$DIR/luna_pinyin.dict.yaml" "$TARGET_DIR/"
+[ -f "$DIR/essay.txt" ] && cp -f "$DIR/essay.txt" "$TARGET_DIR/"
+[ -f "$DIR/rime.lua" ] && cp -f "$DIR/rime.lua" "$TARGET_DIR/"
+
+echo "[√] 方案文件与标准汉字词库已成功自动拷贝到: $TARGET_DIR"
+echo ""
+echo "请点击顶部状态栏右上角的输入法图标，点击【重新部署】(Deploy) 即可立即使用！"
+echo "========================================================"

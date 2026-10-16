@@ -1,0 +1,45 @@
+# weasel.custom.yaml (Windows 小狼毫专属配置 - 搜狗经典白皮肤)
+# 彻底解决黑底看不清问题，风格参考搜狗输入法
+
+patch:
+  "style/horizontal": true              # 横排候选窗口（搜狗标准横排风格）
+  "style/inline_preedit": false          # 拼音与候选分离，防止重叠
+  "style/font_face": "Microsoft YaHei, Segoe UI"
+  "style/font_point": 13                 # 主候选字号，清晰大字
+  "style/label_font_point": 10           # 序号字号
+  "style/comment_font_point": 10         # 粤拼与注释字号
+  "style/corner_radius": 6               # 搜狗微圆角视效
+  "style/hilited_corner_radius": 4       # 高亮条圆角
+  "style/border_width": 1                # 1px 微晶精致边框
+  "style/margin_x": 12                   # 内边距
+  "style/margin_y": 8
+  "style/spacing": 10                    # 间距
+  "style/candidate_spacing": 18          # 候选词间距舒适开阔
+  "style/color_scheme": sogou_white      # 默认采用搜狗经典白
+
+  "preset_color_schemes/sogou_white":
+    name: "搜狗经典白 / Sogou Clean White"
+    author: "KongType Team"
+    back_color: 0xffffff                 # 纯白背景 (彻底解决黑色背景看不清问题)
+    border_color: 0xdcdcdc               # 搜狗浅灰外框线
+    text_color: 0x222222                 # 编码区拼音深黑 (高对比度)
+    hilited_text_color: 0xffffff         # 选中编码白字
+    hilited_back_color: 0xeb6325         # 搜狗经典蓝底色 (0xeb6325 对应 #2563eb)
+    candidate_text_color: 0x202020       # 候选字墨黑清晰
+    comment_text_color: 0x71717a         # 粤拼音调浅灰优雅注释
+    label_color: 0x94a3b8                # 候选词序号 (1. 2. 3.) 经典灰
+    hilited_candidate_text_color: 0xffffff # 首选/当前选中高亮词文字为纯白
+    hilited_candidate_back_color: 0xeb6325 # 首选背景为搜狗蓝高亮胶囊底色
+    hilited_label_color: 0xffffff        # 选中候选序号白色
+    hilited_comment_text_color: 0xffeedd # 选中粤拼注释浅色
+
+  "preset_color_schemes/kongtype_dark":
+    name: "极客暗夜黑 / KongType Dark"
+    author: "KongType Team"
+    back_color: 0x181512
+    border_color: 0x2d241c
+    text_color: 0xeeeeee
+    hilited_text_color: 0x111111
+    hilited_back_color: 0x33b8ff
+    candidate_text_color: 0xcccccc
+    comment_text_color: 0x777777

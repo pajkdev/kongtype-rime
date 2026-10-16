@@ -1,0 +1,10 @@
+# default.custom.yaml
+# 将 港话通 (kongtype_hk) 添加到系统 RIME 候选方案菜单中
+
+patch:
+  schema_list:
+    - schema: kongtype_hk
+    - schema: luna_pinyin
+  "menu/page_size": 5
+  "ascii_composer/switch_key/Shift_L": commit_code
+  "ascii_composer/switch_key/Control_L": noop
